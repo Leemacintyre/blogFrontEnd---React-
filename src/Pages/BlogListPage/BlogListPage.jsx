@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import BlogPost from '../../components/BlogPost/BlogPost';
+import BlogListPost from '../../components/BlogListPost/BlogListPost';
 import axios from 'axios';
 
-const BlogList = (props) => {
+const BlogListPage = (props) => {
   
   const [postData, setPostData] = useState([])
   
@@ -39,7 +39,7 @@ const BlogList = (props) => {
       <div>
         {
           postData.map((post, index) => (
-            <BlogPost
+            <BlogListPost
               key={index}
               id={post.id}
               title={post.title}
@@ -58,4 +58,4 @@ const BlogList = (props) => {
   );
 };
 
-export default BlogList;
+export default BlogListPage;

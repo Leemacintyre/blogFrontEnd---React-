@@ -2,13 +2,16 @@ export const navData = [
   {
     title: 'Home',
     navTitle: 'nav-title',
+    route: '/'
   },
   {
     title: 'Search',
     navTitle: 'nav-title',
+    route:'#'
   },
   {
-    title: 'Blog',
+    title: 'Add Post',
     navTitle: 'nav-title',
+    route:'addpost'
   },
 ]

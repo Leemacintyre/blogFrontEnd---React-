@@ -1,7 +1,7 @@
 import React from 'react';
-import './BlogPost.scss';
+import './BlogListPost.scss';
 
-const BlogPost = (props) => {
+const BlogListPost = (props) => {
 
   const { content, createdAt, id, photo, title, updatedAt } = props
   return (
@@ -28,4 +28,4 @@ const BlogPost = (props) => {
   );
 };
 
-export default BlogPost;
+export default BlogListPost;

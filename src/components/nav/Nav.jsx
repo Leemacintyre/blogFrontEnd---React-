@@ -1,6 +1,7 @@
 import React from 'react';
 import './Nav.scss';
 import { navData } from './data';
+import { Link } from 'react-router-dom';
 
 
 const Navigation = () => {
@@ -10,7 +11,7 @@ const Navigation = () => {
         navData.map((nav, index) => {
           return (
             <div key={index} className={nav.navTitle}>
-              <p>{nav.title}</p>
+              <Link to={nav.route} >{nav.title}</Link>
             </div>
           )
         })
