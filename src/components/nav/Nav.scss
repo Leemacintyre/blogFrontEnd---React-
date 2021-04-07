@@ -1,0 +1,27 @@
+.nav-container {
+  display: flex;
+  justify-content: left;
+  transition-duration: 0.3s;
+
+  .nav-title{
+    height: 50px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+      &:hover {
+        font-weight: 550;
+      }
+
+
+    p{
+      color: black;
+      font-size: 2em;
+      &:hover {
+        transform: scale(1.05);
+        transition-duration: 0.1s;
+      }
+    }
+  }
+}

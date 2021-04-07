@@ -1,0 +1,38 @@
+.searchBar-container {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  padding: 5px;
+
+
+  input,
+  input:focus {
+    border-radius: 20px;
+    height: 100%;
+    border: 1px solid grey;
+    outline: none;
+    font-size: 2em;
+  }
+
+  .hidden {
+    transition: 0.5s ease-out;
+    border: none;
+    width: 0;
+
+  }
+
+  .active {
+    width: 200px;
+    transition: 0.5s ease-in;
+  }
+
+  i {
+    margin-right: 10px;
+    font-size: 3em;
+  }
+
+
+
+
+
+}
