@@ -8,28 +8,30 @@ import BlogPostPage from './Pages/BlogPostPage/BlogPostPage';
 import AddPostPage from './Pages/AddPostPage/AddPostPage';
 
 const App = () => {
-	return (
-		<div>
-			<Header />
-			<Switch>
-				<Route
-					exact
-					path={'/'}
-					render={(props) => <BlogListPost {...props} />}
-				/>
-				<Route
-					exact
-					path={'/:id'}
-					render={(props) => <BlogPostPage {...props} />}
-				/>
-				<Route
-					exact
-					path={'/:id'}
-					render={(props) => <AddPostPage {...props} />}
-				/>
-			</Switch>
-		</div>
-	);
+  return (
+    <div>
+      <Header/>
+      <Switch>
+        <Route
+          exact
+          path={'/'}
+          render={(props) => <BlogListPost {...props} />}
+        />
+        
+        <Route
+          exact
+          path={'/addpost'}
+          render={(props) => <AddPostPage {...props} />}
+        />
+        <Route
+          exact
+          path={'/post:id'}
+          render={(props) => <BlogPostPage {...props} />}
+        />
+        
+      </Switch>
+    </div>
+  );
 };
 
 export default App;

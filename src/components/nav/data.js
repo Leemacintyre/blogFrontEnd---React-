@@ -14,4 +14,9 @@ export const navData = [
     navTitle: 'nav-title',
     route:'addpost'
   },
+  {
+    title: 'Blog Post',
+    navTitle: 'nav-title',
+    route:'post1'
+  },
 ]
