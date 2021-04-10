@@ -6,10 +6,11 @@ import Header from './components/header/Header';
 import BlogListPost from './Pages/BlogListPage/BlogListPage';
 import BlogPostPage from './Pages/BlogPostPage/BlogPostPage';
 import AddPostPage from './Pages/AddPostPage/AddPostPage';
+import EditPostPage from './Pages/EditPostPage/EditPostPage';
 
-const App = () => {
+const App = (props) => {
   return (
-    <div>
+    <div  >
       <Header/>
       <Switch>
         <Route
@@ -25,8 +26,13 @@ const App = () => {
         />
         <Route
           exact
-          path={'/post:id'}
+          path={'/:id'}
           render={(props) => <BlogPostPage {...props} />}
+        />
+        <Route
+          exact
+          path={'/editpost/:id'}
+          render={(props) => <EditPostPage {...props} />}
         />
         
       </Switch>

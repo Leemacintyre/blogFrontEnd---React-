@@ -15,8 +15,18 @@ export const navData = [
     route:'addpost'
   },
   {
+    title: 'Edit Post',
+    navTitle: 'nav-title',
+    route:'editpost/11'
+  },
+  {
+    title: 'Delete Post',
+    navTitle: 'nav-title',
+    route:'addpost'
+  },
+  {
     title: 'Blog Post',
     navTitle: 'nav-title',
-    route:'post1'
+    route:'11'
   },
 ]

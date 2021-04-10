@@ -1,3 +1,46 @@
 .blogpost-container {
+  width: 80%;
+  margin: 0 auto;
 
+  .blogpost-title {
+    padding: 40px;
+
+    p {
+      display: flex;
+      justify-content: center;
+      font-size: 3em;
+    }
+  }
+
+  .blogpost-content {
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    justify-content: space-evenly;
+
+
+    .blogpost-content-content {
+      width: 48%;
+      overflow: scroll;
+      p {
+        font-size: 2em;
+        width: 100%;
+
+      }
+
+    }
+
+
+    .blogpost-content-photo {
+      width: 48%;
+      img {
+        //margin: auto;
+       width: 100%;
+        height: 70vh;
+
+
+
+      }
+    }
+  }
 }

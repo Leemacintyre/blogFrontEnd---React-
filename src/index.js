@@ -9,7 +9,7 @@ const history = createBrowserHistory();
 ReactDOM.render(
   <React.StrictMode>
     <Router history={history}>
-      <App />
+      <App history={history} />
     </Router>
   </React.StrictMode>,
   document.getElementById('root')

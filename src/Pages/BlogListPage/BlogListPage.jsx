@@ -3,8 +3,9 @@ import BlogListPost from '../../components/BlogListPost/BlogListPost';
 import axios from 'axios';
 
 const BlogListPage = (props) => {
-  
+  const {history}=props
   const [postData, setPostData] = useState([])
+
   
   useEffect(() => {
     axios.get('http://127.0.0.1:8000/api/posts').then((response) => {
@@ -40,6 +41,7 @@ const BlogListPage = (props) => {
         {
           postData.map((post, index) => (
             <BlogListPost
+              history={history}
               key={index}
               id={post.id}
               title={post.title}
@@ -47,7 +49,7 @@ const BlogListPage = (props) => {
               photo={post.photo}
               createdAt={post.createdAt}
               updatedAt={post.updatedAt}
-            
+              
             />
           ))
         }

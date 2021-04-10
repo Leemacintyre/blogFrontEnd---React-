@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import './PostForm.scss';
 import axios from 'axios';
-import { Redirect } from 'react-router';
+import { Redirect, withRouter } from 'react-router';
 
-const PostForm = () => {
+const PostForm = (props) => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [photo, setPhoto] = useState('https://source.unsplash.com/random');
   const [redirect,  setRedirect] = useState(false);
+  
   
   const submitHandler = async (event) => {
     event.preventDefault();
@@ -24,12 +25,12 @@ const PostForm = () => {
     return <Redirect to={'/'} />
   }
   
-  console.log(title)
+console.log(props)
   return (
     <form action="" onSubmit={submitHandler}>
       <div className={'postForm-container'}>
         <div className={'postForm-heading'}>
-          <p>Create a new blog post!</p>
+          <p>{props.postTitle}</p>
         </div>
         <div className={'postForm-container-content'}>
           
@@ -82,4 +83,4 @@ const PostForm = () => {
   );
 };
 
-export default PostForm;
+export default withRouter(PostForm);
