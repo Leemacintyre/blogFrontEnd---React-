@@ -2,24 +2,28 @@ import React, { useState } from 'react';
 import './SearchBar.scss';
 
 
-const SearchBar = () => {
+const SearchBar = (props) => {
+  const { search, setSearch } = props
   
   const [active, setActive] = useState('true')
-  console.log(active)
+  console.log(search)
   return (
     <div className={'searchBar-container'}>
       
       <i
         className="fas fa-search"
         onClick={() => setActive(!active)}
-        
       />
       
       <input
         type="text"
-        className={active? 'hidden' : 'active'}
+        value={search}
+        className={active ? 'hidden' : 'active'}
+        onChange={(event => {
+          setSearch(event.target.value)
+        })}
       />
-      
+    
     </div>
   );
 };

@@ -31,8 +31,17 @@ const BlogListPage = (props) => {
       setPostData(postData)
     });
   }, [])
+  
   console.log(props)
   console.log(postData)
+  
+  
+  const deletePost = async (id) => {
+    if (window.confirm('are you sure you want to delete me')) {
+      await axios.delete(`http://127.0.0.1:8000/api/posts/${id}`)
+      setPostData(postData.filter((post) => post.id !== id ));
+  }}
+
   
   return (
     
@@ -49,6 +58,7 @@ const BlogListPage = (props) => {
               photo={post.photo}
               createdAt={post.createdAt}
               updatedAt={post.updatedAt}
+              deletePost={deletePost}
               
             />
           ))

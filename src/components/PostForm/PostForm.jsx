@@ -4,83 +4,68 @@ import axios from 'axios';
 import { Redirect, withRouter } from 'react-router';
 
 const PostForm = (props) => {
-  const [title, setTitle] = useState('');
-  const [content, setContent] = useState('');
-  const [photo, setPhoto] = useState('https://source.unsplash.com/random');
-  const [redirect,  setRedirect] = useState(false);
-  
-  
-  const submitHandler = async (event) => {
-    event.preventDefault();
 
+    const {title,content,photo,postTitle,setContent,setPhoto,setTitle,redirect, submitHandler} = props
     
-    await axios.post('http://127.0.0.1:8000/api/posts', {
-        title,
-        content,
-        photo
-      });
-      setRedirect(true);
-  }
-  if (redirect) {
-    return <Redirect to={'/'} />
-  }
-  
-console.log(props)
-  return (
-    <form action="" onSubmit={submitHandler}>
-      <div className={'postForm-container'}>
-        <div className={'postForm-heading'}>
-          <p>{props.postTitle}</p>
-        </div>
-        <div className={'postForm-container-content'}>
-          
-          <div className={'postForm-content-container'}>
-            <div className={'postForm-content'}>
-              <label>Title</label>
-              <input
-                type="text"
-                name={'title'}
-                value={title}
-                onChange={(e)=>setTitle(e.target.value)}
-              />
-            </div>
+    if (redirect) {
+      return <Redirect to={'/'}/>
+    }
+    
+    return (
+      <form action="" onSubmit={submitHandler}>
+        <div className={'postForm-container'}>
+          <div className={'postForm-heading'}>
+            <p>{postTitle}</p>
           </div>
-          
-          <div className={'postForm-content-container'}>
-            <div className={'postForm-content'}>
-              <label>Content</label>
-              <textarea
-                
-                name={'content'}
-                value={content}
-                onChange={(e)=>setContent(e.target.value)}
-              />
+          <div className={'postForm-container-content'}>
             
+            <div className={'postForm-content-container'}>
+              <div className={'postForm-content'}>
+                <label>Title</label>
+                <input
+                  type="text"
+                  name={'title'}
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
+                />
+              </div>
             </div>
-          </div>
+            
+            <div className={'postForm-content-container'}>
+              <div className={'postForm-content'}>
+                <label>Content</label>
+                <textarea
+                  
+                  name={'content'}
+                  value={content}
+                  onChange={(e) => setContent(e.target.value)}
+                />
+              
+              </div>
+            </div>
+            
+            <div className={'postForm-content-container'}>
+              <div className={'postForm-content'}>
+                <label>Photo</label>
+                <input
+                  type="text"
+                  name={'photo'}
+                  value={photo}
+                  placeholder={'https://source.unsplash.com/random'}
+                  onChange={(e) => setPhoto(e.target.value)}
+                />
+              </div>
+            </div>
           
-          <div className={'postForm-content-container'}>
-            <div className={'postForm-content'}>
-              <label>Photo</label>
-              <input
-                type="text"
-                name={'photo'}
-                value={photo}
-                placeholder={'https://source.unsplash.com/random'}
-                onChange={(e)=>setPhoto(e.target.value)}
-              />
-            </div>
           </div>
         
         </div>
-      
-      </div>
-      <div className={'postForm-button'}>
-        <button type={'submit'} onClick={submitHandler}>submit</button>
-      </div>
-    </form>
-  
-  );
-};
+        <div className={'postForm-button'}>
+          <button type={'submit'} onClick={submitHandler}>submit</button>
+        </div>
+      </form>
+    
+    );
+  };
 
 export default withRouter(PostForm);

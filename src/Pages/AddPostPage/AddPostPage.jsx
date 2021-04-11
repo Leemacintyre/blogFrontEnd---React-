@@ -8,6 +8,7 @@ const AddPostPage = () => {
   const [photo, setPhoto] = useState('https://source.unsplash.com/random');
   const [redirect,  setRedirect] = useState(false);
   
+  
   const submitHandler = async (event) => {
     event.preventDefault();
     
@@ -23,7 +24,15 @@ const AddPostPage = () => {
     <div>
       <PostForm
         postTitle={'Create a new blog post!'}
-      
+        title={title}
+        setTitle={setTitle}
+        content={content}
+        setContent={setContent}
+        photo={photo}
+        setPhoto={setPhoto}
+        redirect={redirect}
+        setRedirect={setRedirect}
+        submitHandler={submitHandler}
       />
     </div>
   );

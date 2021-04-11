@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './BlogListPost.scss';
+import axios from 'axios';
+import { Redirect } from 'react-router';
 
 const BlogListPost = (props) => {
+  
+  const { content, createdAt, id, photo, title, updatedAt, history,deletePost } = props
 
   
-  const { content, createdAt, id, photo, title, updatedAt, history  } = props
   return (
-    <div className={'post-container'}    >
+    <div className={'post-container'}>
       <div className={'title-container'}>
         <div className={'post-title'}
-             onClick={()=>{
+             onClick={() => {
                history.push(`${id}`)
              }}
         >
@@ -17,20 +20,25 @@ const BlogListPost = (props) => {
         </div>
         <div className={'post-content-controls'}>
           <div className={'post-content-edit'}
-          onClick={()=>{
-            history.push(`editpost/${id}`)
-          }}
-          >Edit</div>
-          <div className={'post-content-delete'}>Delete</div>
+               onClick={() => {
+                 history.push(`editpost/${id}`)
+               }}
+          >Edit
+          </div>
+          <div
+            className={'post-content-delete'}
+            onClick={() => deletePost(id)}
+          >Delete
+          </div>
         </div>
         <div className={'post-date'}>
-          {createdAt.slice(0,10) + ' - ' + createdAt.slice(12, 16)}
+          {createdAt.slice(0, 10) + ' - ' + createdAt.slice(12, 16)}
         </div>
-        
+      
       </div>
       
       <div className={'post-content'}
-           onClick={()=>{
+           onClick={() => {
              history.push(`${id}`)
            }}
       >
@@ -38,10 +46,10 @@ const BlogListPost = (props) => {
           <img src={photo + `${'/'} ${id}`} alt="alt"/>
         </div>
         <div className={'post-content-text'}>
-          <p>{content.slice(0,300)}</p>
+          <p>{content.slice(0, 300)}</p>
         </div>
       </div>
-      
+    
     </div>
   );
 };
