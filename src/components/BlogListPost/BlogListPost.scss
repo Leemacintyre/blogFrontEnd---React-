@@ -1,5 +1,5 @@
 .post-container {
-  padding: 30px;
+  padding: 50px;
 
   .title-container {
     display: flex;
@@ -10,6 +10,7 @@
     .post-title {
       p {
         font-size: 5em;
+        font-weight: bold;
       }
     }
 
@@ -17,6 +18,7 @@
       font-size: 1.5em;
       border-bottom: 2px solid darkorchid;
     }
+
     .post-content-controls {
       //border: 1px solid red;
       display: flex;
@@ -57,13 +59,66 @@
       background: whitesmoke;
       width: calc(100% - 200px);
       height: 200px;
+      overflow: hidden;
 
       p {
         margin: 20px;
         font-size: 2em;
+
       }
     }
   }
+}
 
+@media only screen and (max-width: 900px) {
+  .post-container {
+    padding: 0;
+    margin-bottom: 20px;
+
+    .post-content {
+      margin: 0;
+
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .post-container {
+    .title-container {
+
+
+      .post-date {
+        visibility: hidden;
+      }
+    }
+
+    .title-container {
+      margin: 0;
+
+      .post-title {
+        width: 100%;
+        p {
+          font-size: 2em;
+          font-weight: bold;
+        }
+      }
+
+      .post-content-controls {
+
+        .post-content-edit {
+          margin-left: 40px;
+        }
+
+        .post-content-delete {
+          margin-left: 40px;
+        }
+      }
+    }
+    .post-content {
+      .post-content-text {
+        overflow: scroll;
+      }
+    }
+  }
 
 }

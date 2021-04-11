@@ -3,26 +3,39 @@
   justify-content: left;
   transition-duration: 0.3s;
 
-  .nav-title{
+  .nav-title {
     height: 50px;
     width: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 10px;
-      &:hover {
-        font-weight: 550;
-      }
+
+    &:hover {
+      font-weight: 550;
+    }
 
 
     a {
       text-decoration: none;
       color: black;
       font-size: 2em;
+
       &:hover {
         transform: scale(1.05);
         transition-duration: 0.1s;
       }
+    }
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .nav-container {
+    .nav-title {
+      margin: 0;
+      display: flex;
+      justify-content: left;
+      text-align: left;
     }
   }
 }
