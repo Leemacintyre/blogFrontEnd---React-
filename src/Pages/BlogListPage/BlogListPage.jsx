@@ -3,7 +3,7 @@ import BlogListPost from '../../components/BlogListPost/BlogListPost';
 import axios from 'axios';
 
 const BlogListPage = (props) => {
-  const {history}=props
+  const {history, search, setSearch }=props
   const [postData, setPostData] = useState([])
 
   
@@ -41,15 +41,22 @@ const BlogListPage = (props) => {
       await axios.delete(`http://127.0.0.1:8000/api/posts/${id}`)
       setPostData(postData.filter((post) => post.id !== id ));
   }}
-
   
+  // const handleSearch = () => {
+  //
+  // }
+  
+  
+  console.log(postData)
   return (
     
     <div>
+      
       <div>
+        
         {
           postData.map((post, index) => (
-            <BlogListPost
+           (post.title.toUpperCase().includes(search.toUpperCase()) || post.content.toUpperCase().includes(search.toUpperCase())) && (<BlogListPost
               history={history}
               key={index}
               id={post.id}
@@ -59,11 +66,9 @@ const BlogListPage = (props) => {
               createdAt={post.createdAt}
               updatedAt={post.updatedAt}
               deletePost={deletePost}
-              
-            />
+            />)
           ))
         }
-      
       </div>
     
     </div>

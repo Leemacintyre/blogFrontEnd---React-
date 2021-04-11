@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './BlogListPost.scss';
-import axios from 'axios';
-import { Redirect } from 'react-router';
+
 
 const BlogListPost = (props) => {
   

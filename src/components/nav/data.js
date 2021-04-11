@@ -4,16 +4,16 @@ export const navData = [
     navTitle: 'nav-title',
     route: '/'
   },
-  {
-    title: 'Search',
-    navTitle: 'nav-title',
-    route:'#'
-  },
   // {
-  //   title: 'Add Post',
+  //   title: 'Search',
   //   navTitle: 'nav-title',
-  //   route:'addpost'
+  //   route:'#'
   // },
+  {
+    title: 'Add Post',
+    navTitle: 'nav-title',
+    route:'addpost'
+  },
   // {
   //   title: 'Edit Post',
   //   navTitle: 'nav-title',

@@ -3,9 +3,8 @@ import './Header.scss';
 import Navigation from '../nav/Nav';
 import SearchBar from '../searchBar/SearchBar';
 
-const Header = () => {
-  const [search, setSearch] =useState('')
-  
+const Header = (props) => {
+  const { search, setSearch } = props
   
   return (
     <div className='header-container'>

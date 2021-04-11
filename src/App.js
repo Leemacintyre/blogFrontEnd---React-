@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.scss';
 import { Switch, Route } from 'react-router-dom';
 
@@ -9,14 +9,22 @@ import AddPostPage from './Pages/AddPostPage/AddPostPage';
 import EditPostPage from './Pages/EditPostPage/EditPostPage';
 
 const App = (props) => {
+  const [search, setSearch] = useState('')
+  
   return (
-    <div  >
-      <Header/>
+    <div>
+      <Header
+        search={search}
+        setSearch={setSearch}
+      />
       <Switch>
         <Route
           exact
           path={'/'}
-          render={(props) => <BlogListPost {...props} />}
+          render={(props) =>
+            <BlogListPost {...props}
+                          search={search}
+                          setSearch={setSearch}/>}
         />
         
         <Route
@@ -27,14 +35,15 @@ const App = (props) => {
         <Route
           exact
           path={'/:id'}
-          render={(props) => <BlogPostPage {...props} />}
+          render={(props) => <BlogPostPage {...props}
+          />}
         />
         <Route
           exact
           path={'/editpost/:id'}
           render={(props) => <EditPostPage {...props} />}
         />
-        
+      
       </Switch>
     </div>
   );
