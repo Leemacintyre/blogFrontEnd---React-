@@ -3,10 +3,26 @@
   background: whitesmoke;
   display: flex;
   justify-content: space-between;
+  transition: all 2s;
+
 }
 
 @media only screen and (max-width: 900px) {
-.header-container {
-  padding: 10px 0;
+  .header-container {
+    padding: 10px 0;
+  }
+
 }
+
+@media only screen and (max-width: 600px) {
+
+  .hidden {
+    transition: all 2s;
+    display: none;
+  }
+
+  .active {
+    transition: all 2s;
+    display: flex;
+  }
 }

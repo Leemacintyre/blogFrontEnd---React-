@@ -5,14 +5,22 @@ import SearchBar from '../searchBar/SearchBar';
 
 const Header = (props) => {
   const { search, setSearch } = props
+  const [active, setActive] = useState(false)
   
+  console.log(active)
   return (
     <div className='header-container'>
-      <Navigation/>
-      <SearchBar
-        search={search}
-        setSearch={setSearch}
-      />
+      <div className={active? 'hidden' : 'active'}>
+        <Navigation />
+      </div>
+      <div className={'searchBar'}>
+        <SearchBar
+          search={search}
+          setSearch={setSearch}
+          active={active}
+          setActive={setActive}
+        />
+      </div>
     </div>
   );
 };

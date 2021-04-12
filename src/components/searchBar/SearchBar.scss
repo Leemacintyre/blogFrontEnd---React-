@@ -5,6 +5,8 @@
   padding: 5px;
 
 
+
+
   input,
   input:focus {
     border-radius: 20px;
@@ -12,27 +14,37 @@
     border: 1px solid grey;
     outline: none;
     font-size: 2em;
+
   }
 
   .hidden {
-    transition: 0.5s ease-out;
+    transition: 1s;
     border: none;
     width: 0;
+
 
   }
 
   .active {
+    margin: auto;
     width: 200px;
-    transition: 0.5s ease-in;
+    transition: 1s ;
   }
 
   i {
     margin-right: 10px;
     font-size: 3em;
   }
+}
 
+@media only screen and (max-width: 600px) {
+  .searchBar-container {
+    input,
+    input:focus {
+      display: flex;
 
+    }
 
-
+  }
 
 }

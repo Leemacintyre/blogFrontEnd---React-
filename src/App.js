@@ -28,7 +28,7 @@ const App = (props) => {
         />
         
         <Route
-          exact
+          
           path={'/addpost'}
           render={(props) => <AddPostPage {...props} />}
         />

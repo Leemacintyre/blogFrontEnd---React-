@@ -3,10 +3,9 @@ import './SearchBar.scss';
 
 
 const SearchBar = (props) => {
-  const { search, setSearch } = props
+  const { search, setSearch, active, setActive } = props
   
-  const [active, setActive] = useState('true')
-  console.log(search)
+
   return (
     <div className={'searchBar-container'}>
       
@@ -18,7 +17,7 @@ const SearchBar = (props) => {
       <input
         type="text"
         value={search}
-        className={active ? 'hidden' : 'active'}
+        className={active ? 'active' : 'hidden'}
         onChange={(event => {
           setSearch(event.target.value)
         })}

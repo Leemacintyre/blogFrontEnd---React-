@@ -1,6 +1,6 @@
 .postForm-container {
   margin: 0 auto;
-  width: 90%;
+  width: 1200px;
 
 
   .postForm-heading {
@@ -18,7 +18,7 @@
 
 
     .postForm-content-container {
-      width: 50%;
+      width: 80%;
       margin: 0 auto;
 
 
@@ -74,4 +74,21 @@
     transition: 0.1s;
     transform: scale(0.99);
   }
+}
+
+@media only screen and (max-width: 900px) {
+
+  .postForm-container {
+    width: 100%;
+
+    .postForm-container-content {
+
+      .postForm-content-container {
+        width: 80%;
+
+
+      }
+    }
+  }
+
 }

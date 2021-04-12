@@ -12,7 +12,7 @@ export const navData = [
   {
     title: 'Add Post',
     navTitle: 'nav-title',
-    route:'addpost'
+    route:'/addpost'
   },
   // {
   //   title: 'Edit Post',
