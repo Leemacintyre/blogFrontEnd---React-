@@ -8,7 +8,7 @@ import BlogPostPage from './Pages/BlogPostPage/BlogPostPage';
 import AddPostPage from './Pages/AddPostPage/AddPostPage';
 import EditPostPage from './Pages/EditPostPage/EditPostPage';
 
-const App = (props) => {
+const App = () => {
   const [search, setSearch] = useState('')
   
   return (

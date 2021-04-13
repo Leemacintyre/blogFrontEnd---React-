@@ -6,7 +6,7 @@ const AddPostPage = () => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [photo, setPhoto] = useState('https://source.unsplash.com/random');
-  const [redirect,  setRedirect] = useState(false);
+  const [redirect, setRedirect] = useState(false);
   
   
   const submitHandler = async (event) => {

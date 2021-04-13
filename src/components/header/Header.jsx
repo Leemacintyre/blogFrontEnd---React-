@@ -7,11 +7,10 @@ const Header = (props) => {
   const { search, setSearch } = props
   const [active, setActive] = useState(false)
   
-  console.log(active)
   return (
     <div className='header-container'>
-      <div className={active? 'hidden' : 'active'}>
-        <Navigation />
+      <div className={active ? 'hidden' : 'active'}>
+        <Navigation/>
       </div>
       <div className={'searchBar'}>
         <SearchBar

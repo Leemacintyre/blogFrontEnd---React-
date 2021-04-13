@@ -6,20 +6,20 @@ import axios from 'axios';
 const BlogPostPage = (props) => {
   const { match } = props
   const { params } = match
-  const {id} = params
+  const { id } = params
   console.log(id)
-
+  
   const baseUrl = `http://127.0.0.1:8000/api/posts/${id}`
   const [data, setData] = useState([])
-
-
+  
+  
   useEffect(() => {
     
-    axios.get(baseUrl).then((response)=> {
+    axios.get(baseUrl).then((response) => {
       setData(response.data)
     });
-  },[]);
-
+  }, []);
+  
   
   return (
     <div>

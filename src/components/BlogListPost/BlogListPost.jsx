@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './BlogListPost.scss';
 
 
 const BlogListPost = (props) => {
   
-  const { content, createdAt, id, photo, title, updatedAt, history,deletePost } = props
-
+  const { content, createdAt, id, photo, title, history, deletePost } = props
+  
   
   return (
     <div className={'post-container'}>
@@ -42,7 +42,7 @@ const BlogListPost = (props) => {
            }}
       >
         <div className={'post-content-image'}>
-          <img src={photo + `${'/'} ${id}`} alt="alt"/>
+          <img src={photo + `'/' ${id}`} alt="alt"/>
         </div>
         <div className={'post-content-text'}>
           <p>{content.slice(0, 300)}</p>

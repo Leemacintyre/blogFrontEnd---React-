@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import PostForm from '../../components/PostForm/PostForm';
 import axios from 'axios';
-import {  withRouter } from 'react-router';
-
+import { withRouter } from 'react-router';
 
 
 const EditPostPage = (props) => {

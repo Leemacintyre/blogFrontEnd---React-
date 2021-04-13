@@ -3,9 +3,9 @@ import BlogListPost from '../../components/BlogListPost/BlogListPost';
 import axios from 'axios';
 
 const BlogListPage = (props) => {
-  const {history, search, setSearch }=props
+  const { history, search } = props
   const [postData, setPostData] = useState([])
-
+  
   
   useEffect(() => {
     axios.get('http://127.0.0.1:8000/api/posts').then((response) => {
@@ -32,22 +32,15 @@ const BlogListPage = (props) => {
     });
   }, [])
   
-  console.log(props)
-  console.log(postData)
-  
   
   const deletePost = async (id) => {
     if (window.confirm('are you sure you want to delete me')) {
       await axios.delete(`http://127.0.0.1:8000/api/posts/${id}`)
-      setPostData(postData.filter((post) => post.id !== id ));
-  }}
-  
-  // const handleSearch = () => {
-  //
-  // }
+      setPostData(postData.filter((post) => post.id !== id));
+    }
+  }
   
   
-  console.log(postData)
   return (
     
     <div>
@@ -56,17 +49,18 @@ const BlogListPage = (props) => {
         
         {
           postData.map((post, index) => (
-           (post.title.toUpperCase().includes(search.toUpperCase()) || post.content.toUpperCase().includes(search.toUpperCase())) && (<BlogListPost
-              history={history}
-              key={index}
-              id={post.id}
-              title={post.title}
-              content={post.content}
-              photo={post.photo}
-              createdAt={post.createdAt}
-              updatedAt={post.updatedAt}
-              deletePost={deletePost}
-            />)
+            (post.title.toUpperCase().includes(search.toUpperCase()) || post.content.toUpperCase().includes(search.toUpperCase())) && (
+              <BlogListPost
+                history={history}
+                key={index}
+                id={post.id}
+                title={post.title}
+                content={post.content}
+                photo={post.photo}
+                createdAt={post.createdAt}
+                updatedAt={post.updatedAt}
+                deletePost={deletePost}
+              />)
           ))
         }
       </div>
